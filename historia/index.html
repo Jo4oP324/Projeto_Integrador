@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ciclo da Borracha no Brasil</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;700&family=Montserrat:wght@400;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --marrom-escuro: #4E3620;
+      --marrom: #7B5C36;
+      --bege: #FAF3E3;
+      --dourado: #BFA267;
+      --marrom-claro: #D8C1A4;
+      --cinza: #7C6B57;
+      --branco: #FFF;
+      --fonte-titulo: 'EB Garamond', serif;
+      --fonte-texto: 'Montserrat', Arial, serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--bege) url('https://www.transparenttextures.com/patterns/old-mathematics.png');
+      color: var(--marrom-escuro);
+      font-family: var(--fonte-texto);
+      min-width: 320px;
+    }
+
+    header {
+      background: linear-gradient(to bottom, #a0876fbb 0%, #7b5c36ee 100%), url('banner-borracha.jpg') center/cover no-repeat;
+      padding: 64px 0 36px 0;
+      text-align: center;
+      color: var(--dourado);
+      box-shadow: 0 3px 30px #7b5c3677;
+    }
+
+    header h1 {
+      font-size: 2.6em;
+      font-family: var(--fonte-titulo);
+      letter-spacing: 2px;
+      text-shadow: 0 2px 8px #4e3620cc;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    header p {
+      font-size: 1.3em;
+      font-style: italic;
+      color: var(--marrom-claro);
+      text-shadow: 0 1px 2px #4e3620cc;
+      font-family: var(--fonte-titulo);
+    }
+
+    nav {
+      background: var(--marrom-claro);
+      text-align: center;
+      padding: 13px 0 9px 0;
+      border-bottom: 3px solid var(--dourado);
+      font-family: var(--fonte-titulo);
+      font-size: 1.08em;
+      letter-spacing: 0.04em;
+      box-shadow: 0 2px 6px #bfa26722;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      color: var(--marrom-escuro);
+      text-decoration: none;
+      font-weight: 600;
+      margin: 0 18px;
+      padding: 5px 0;
+      border-bottom: 2px solid transparent;
+      transition: all .2s;
+    }
+
+    nav a:hover {
+      color: var(--dourado);
+      border-bottom: 2px solid var(--dourado);
+    }
+
+    main {
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 36px 22px 42px 22px;
+      background: var(--bege);
+      border-radius: 0 0 28px 28px;
+      box-shadow: 0 4px 20px #7b5c3622;
+      font-size: 1.08em;
+    }
+
+    .intro-block {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 38px;
+      margin-bottom: 54px;
+      align-items: stretch;
+    }
+
+    .intro-info {
+      flex: 2;
+      min-width: 270px;
+    }
+
+    .intro-info .intro-icon {
+      font-size: 2.5em;
+      color: var(--dourado);
+      vertical-align: middle;
+    }
+
+    .intro-info h2 {
+      display: inline-block;
+      font-size: 2em;
+      font-family: var(--fonte-titulo);
+      font-weight: 700;
+      margin-left: 12px;
+      vertical-align: middle;
+      letter-spacing: 1px;
+      color: var(--marrom-escuro);
+    }
+
+    .intro-info p.desc {
+      color: var(--marrom);
+      font-size: 1.14em;
+      margin: 7px 0 20px 0;
+      font-style: italic;
+    }
+
+    .intro-info p {
+      margin-bottom: 14px;
+      font-size: 1.07em;
+      line-height: 1.75;
+    }
+
+    .intro-img {
+      flex: 1.5;
+      min-width: 340px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* Para alinhar centralizado verticalmente */
+    }
+
+    .intro-img img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px #7b5c3644;
+      border: 4px solid var(--marrom-claro);
+      background: var(--branco);
+      min-height: 210px;
+      max-height: 320px;
+      display: block;
+    }
+
+    .aside-block {
+      flex: 1.2;
+      min-width: 220px;
+      margin-left: 24px;
+      background: var(--marrom-claro);
+      border-radius: 16px;
+      padding: 18px 18px;
+      box-shadow: 0 2px 8px #7b5c3622;
+      font-size: 1.01em;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-self: stretch;
+      overflow: hidden;
+    }
+
+    .aside-block h3 {
+      font-size: 1.21em;
+      font-family: var(--fonte-titulo);
+      font-weight: 700;
+      margin-bottom: 13px;
+      color: var(--dourado);
+      letter-spacing: 1px;
+    }
+
+    .aside-block .item-titulo {
+      display: block;
+      font-weight: 700;
+      color: var(--marrom-escuro);
+      margin-bottom: 0px;
+      font-size: 1.01em;
+    }
+
+    .aside-block li:last-child {
+      margin-bottom: 0;
+    }
+
+    .aside-block ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .aside-block li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .aside-block .icon {
+      font-size: 1.5em;
+      margin-top: 2px;
+      flex-shrink: 0;
+      min-width: 1.5em;
+      text-align: center;
+    }
+
+    .aside-block .item-text {
+      display: block;
+      font-size: 1em;
+      color: var(--marrom-escuro);
+      line-height: 1.45;
+    }
+
+    .aside-block strong {
+      font-weight: 700;
+      color: var(--marrom-escuro);
+    }
+
+    section {
+      margin-bottom: 38px;
+    }
+
+    section h2 {
+      font-size: 1.45em;
+      color: var(--dourado);
+      font-family: var(--fonte-titulo);
+      margin-bottom: 13px;
+      font-weight: 700;
+    }
+
+    .galeria {
+      margin: 20px 0 18px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .galeria figure {
+      margin: 0;
+      width: 100%;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .galeria img,
+    .grafico-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      border-radius: 14px;
+      box-shadow: 0 2px 13px #7b5c3622;
+      border: 3px solid var(--dourado);
+      background: var(--branco);
+      min-height: 160px;
+      max-height: 340px;
+      display: block;
+    }
+
+    .galeria figcaption {
+      font-size: .99em;
+      color: var(--marrom);
+      margin-top: 5px;
+      text-align: left;
+      font-style: italic;
+      width: 98%;
+      align-self: flex-start;
+    }
+
+    .curiosidade {
+      background: var(--marrom-claro);
+      border-left: 5px solid var(--dourado);
+      margin: 20px 0 18px 0;
+      padding: 12px 22px 13px 19px;
+      border-radius: 8px;
+      font-size: 1.07em;
+      color: var(--marrom-escuro);
+      box-shadow: 0 1px 6px #bfa26722;
+      font-style: italic;
+    }
+
+    .timeline {
+      list-style: none;
+      padding-left: 0;
+      margin-left: 0;
+    }
+
+    .timeline li {
+      margin-bottom: 10px;
+      position: relative;
+      padding-left: 26px;
+      font-family: var(--fonte-titulo);
+    }
+
+    .timeline li::before {
+      content: "📜";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--marrom);
+      font-size: 1em;
+    }
+
+    #quiz {
+      background: var(--marrom-claro);
+      padding: 18px 16px;
+      border-radius: 14px;
+      max-width: 600px;
+      margin: 0 auto 32px auto;
+      box-shadow: 0 0 10px #7b5c3617;
+    }
+
+    #form-quiz .pergunta {
+      margin-bottom: 16px;
+    }
+
+    #form-quiz p {
+      font-weight: 600;
+      color: var(--marrom-escuro);
+      font-family: var(--fonte-titulo);
+    }
+
+    #form-quiz input[type="radio"] {
+      margin-right: 7px;
+      accent-color: var(--dourado);
+    }
+
+    #form-quiz button {
+      margin-top: 12px;
+      background: var(--dourado);
+      color: var(--marrom-escuro);
+      border: none;
+      padding: 9px 23px;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 1.06em;
+      cursor: pointer;
+      font-family: var(--fonte-titulo);
+      box-shadow: 0 2px 7px #bfa26744;
+      transition: background .2s, color .2s;
+    }
+
+    #form-quiz button:hover {
+      background: var(--marrom);
+      color: var(--bege);
+    }
+
+    #resultado-quiz {
+      margin-top: 13px;
+      font-weight: bold;
+      color: var(--dourado);
+      font-size: 1.19em;
+      font-family: var(--fonte-titulo);
+    }
+
+    /* Gráficos customizados */
+    .graficos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 32px;
+      justify-content: center;
+      align-items: flex-start;
+      margin: 22px 0 16px 0;
+    }
+
+    .galeria-img,
+    .grafico-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: contain;
+      /* Alterado de 'cover' para 'contain' */
+      border-radius: 14px;
+      box-shadow: 0 2px 13px #7b5c3622;
+      border: 3px solid var(--dourado);
+      background: var(--branco);
+      min-height: 160px;
+      max-height: 340px;
+      display: block;
+    }
+
+    .grafico {
+      max-width: 480px;
+      width: 100%;
+      flex: 1 1 280px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: var(--branco);
+      border-radius: 13px;
+      box-shadow: 0 2px 13px #7b5c3622;
+      border: 3px solid var(--marrom-claro);
+      padding: 13px 10px 17px 10px;
+    }
+
+    .grafico-titulo {
+      font-family: var(--fonte-titulo);
+      color: var(--dourado);
+      font-weight: bold;
+      font-size: 1.1em;
+      margin-bottom: 4px;
+      text-align: center;
+    }
+
+    .grafico-caption {
+      font-size: .97em;
+      color: var(--marrom);
+      margin-top: 7px;
+      text-align: left;
+      font-style: italic;
+      width: 98%;
+      align-self: flex-start;
+    }
+
+    #btn-topo {
+      position: fixed;
+      bottom: 21px;
+      right: 17px;
+      background: var(--dourado);
+      color: var(--marrom-escuro);
+      font-size: 1.38em;
+      border-radius: 50%;
+      height: 38px;
+      width: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 3px 10px #7b5c3622;
+      z-index: 50;
+      border: 2px solid var(--bege);
+      transition: background .2s;
+    }
+
+    #btn-topo:hover {
+      background: var(--marrom);
+      color: var(--bege);
+    }
+
+    .podcast-section {
+      background: var(--marrom-claro);
+      border-radius: 18px;
+      box-shadow: 0 2px 13px #7b5c3622;
+      padding: 28px 18px 22px 18px;
+      margin: 38px 0 38px 0;
+      text-align: center;
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .podcast-section h2 {
+      color: var(--dourado);
+      margin-bottom: 8px;
+      font-size: 1.5em;
+      font-family: var(--fonte-titulo);
+    }
+
+    .podcast-section p {
+      color: var(--marrom-escuro);
+      font-size: 1.08em;
+      margin-bottom: 18px;
+      font-style: italic;
+      font-family: var(--fonte-texto);
+    }
+
+    .podcast-player {
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+      display: block;
+      background: var(--bege);
+      border-radius: 8px;
+      box-shadow: 0 1px 3px #7b5c3622;
+      padding: 5px;
+    }
+
+    @media (max-width: 700px) {
+      .podcast-section {
+        padding: 16px 5vw 16px 5vw;
+        max-width: 98vw;
+      }
+
+      .podcast-player {
+        max-width: 98vw;
+      }
+    }
+
+    footer {
+      background: var(--marrom);
+      color: var(--bege);
+      text-align: center;
+      font-size: 1.04em;
+      padding: 16px 0 10px 0;
+      margin-top: 26px;
+      font-family: var(--fonte-titulo);
+      letter-spacing: 0.03em;
+    }
+
+    #resultado-quiz h3 {
+      color: #8B5E3C;
+      margin-bottom: 15px;
+    }
+
+    #resultado-quiz div {
+      padding: 10px 15px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      font-size: 1em;
+      line-height: 1.4;
+    }
+
+    #resultado-quiz div.correto {
+      background-color: #f2e1c1;
+      color: #2e1a0f;
+      border-left: 6px solid #c4a484;
+    }
+
+    #resultado-quiz div.errado {
+      background-color: #7b5c36ee;
+      color: #fff8f0;
+      border-left: 6px solid #c4a484;
+    }
+
+    @media (max-width: 900px) {
+      .intro-block {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .aside-block {
+        margin-left: 0;
+        margin-top: 20px;
+      }
+
+      main {
+        box-shadow: none;
+        border-radius: 0;
+      }
+
+      .graficos {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .galeria figure,
+      .grafico {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 34px 0 17px 0;
+      }
+
+      header h1 {
+        font-size: 1.23em;
+      }
+
+      main {
+        padding: 7px 3px;
+      }
+
+      .intro-info h2 {
+        font-size: 1.1em;
+      }
+
+      .nav {
+        font-size: 0.97em;
+      }
+
+      .galeria img {
+        max-width: 100%;
+      }
+
+      .aside-block {
+        padding: 12px 7px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Ciclo da Borracha no Brasil</h1>
+    <p>O esplendor e a crise de uma economia que transformou a Amazônia</p>
+  </header>
+
+  <nav>
+    <a href="#introducao">Introdução</a>
+    <a href="#apogeu">Apogeu Econômico</a>
+    <a href="#impactos">Impactos Sociais</a>
+    <a href="#declinio">Declínio</a>
+    <a href="#curiosidades">Curiosidades</a>
+    <a href="#linha-tempo">Linha do Tempo</a>
+    <a href="#grafico">Gráficos</a>
+    <a href="#quiz">Quiz</a>
+    <a href="#conclusao">Conclusão</a>
+    <a href="#referencias">Referências</a>
+  </nav>
+
+  <main>
+    <section class="intro-block" id="introducao">
+      <div class="intro-info">
+        <span class="intro-icon">📖</span>
+        <h2>INTRODUÇÃO</h2>
+        <p class="desc"><br>Entre 1850 e 1930, a Amazônia foi palco de uma das maiores transformações econômicas do
+          Brasil: o Ciclo da Borracha.</p>
+        <p>
+          O Ciclo da Borracha foi um período de intensa exploração econômica da <strong>seringueira</strong> (Hevea
+          brasiliensis), árvore nativa da floresta amazônica. O látex extraído dela era exportado principalmente para a
+          Europa e os Estados Unidos, abastecendo indústrias que, com a Revolução Industrial, exigiam cada vez mais
+          borracha para pneus, correias, fios e diferentes produtos.
+        </p>
+        <p>
+          Esse ciclo não trouxe apenas riqueza: também promoveu grande fluxo migratório, avanços urbanos e culturais,
+          mas gerou desigualdade, violência e devastação ambiental. Manaus e Belém tornaram-se símbolos do luxo
+          tropical, mas milhares de trabalhadores e povos indígenas foram explorados duramente.
+        </p>
+        <p>
+          Após um auge espetacular, a região mergulhou em crise com a concorrência asiática, deixando marcas profundas
+          que ainda hoje influenciam a história, a economia e a cultura do Norte do Brasil.
+        </p>
+      </div>
+      <aside class="aside-block">
+        <h3>Aspectos do Ciclo da Borracha</h3>
+        <ul>
+          <li>
+            <span class="icon" title="Riqueza e ostentação">💰</span>
+            <div class="item-text">
+              <span class="item-titulo">Riqueza e ostentação:</span>
+              Fortunas rápidas, exportações milionárias e luxo para poucos.
+            </div>
+          </li>
+          <li>
+            <span class="icon" title="Transformação urbana">🏙️</span>
+            <div class="item-text">
+              <span class="item-titulo">Transformação urbana:</span>
+              Manaus e Belém ganharam teatros, luz elétrica, bondes e arquitetura importada da Europa.
+            </div>
+          </li>
+          <li>
+            <span class="icon" title="Impactos ambientais">🌳</span>
+            <div class="item-text">
+              <span class="item-titulo">Impactos ambientais:</span>
+              Avanço sobre florestas e territórios indígenas, com extração predatória.
+            </div>
+          </li>
+          <li>
+            <span class="icon" title="Trabalho exploratório">🔗</span>
+            <div class="item-text">
+              <span class="item-titulo">Trabalho exploratório:</span>
+              Seringueiros em regime de dívida e isolamento, e indígenas violentados ou escravizados.
+            </div>
+          </li>
+          <li>
+            <span class="icon" title="Integração global">🚢</span>
+            <div class="item-text">
+              <span class="item-titulo">Integração global:</span>
+              Produtos amazonenses chegavam a Londres, Paris e Nova York.
+            </div>
+          </li>
+        </ul>
+      </aside>
+    </section>
+
+    <section id="apogeu">
+      <h2>Apogeu Econômico (1879-1912)</h2>
+      <div class="galeria">
+        <figure>
+          <img
+            src="https://ibcborrachas.com.br/wp-content/uploads/2017/04/Indian_rubber_gatherers_on_the_upper_Amazon_Brazil_LCCN2001705614.jpg"
+            alt="Manaus no auge da borracha">
+          <figcaption>Teatro Amazonas: símbolo da riqueza do Ciclo da Borracha. Fonte: Biblioteca Nacional</figcaption>
+        </figure>
+      </div>
+      <p>
+        Entre o fim do século XIX e 1912, a Amazônia viveu uma fase de riqueza inédita. A borracha tornou-se o “ouro
+        branco” da floresta, alimentando indústrias globais. Manaus foi chamada de “Paris dos Trópicos”: tinha energia
+        elétrica, bonde, jornal diário, clubes de elite, cinema e o suntuoso Teatro Amazonas, inaugurado em 1896,
+        importando mármore da Itália e lustres da França.
+      </p>
+      <p>
+        O sistema do <strong>aviamento</strong> dominava a economia: comerciantes financiavam a ida de trabalhadores
+        (seringueiros) à floresta, adiantando ferramentas e mantimentos — mas cobrando preços altos e criando dívidas
+        impagáveis. A elite amazônica desfilava em festas e importava modas da Europa, enquanto a maior parte da
+        população vivia em condições precárias.
+      </p>
+      <p>
+        Belém também prosperou, integrando-se ao mercado internacional e recebendo imigrantes, produtos de luxo e
+        grandes obras públicas, como o Mercado Ver-o-Peso.
+      </p>
+    </section>
+
+    <section id="impactos">
+      <h2>Impactos Sociais, Humanos e Ambientais</h2>
+      <p>
+        O progresso teve um custo profundo. Seringueiros, em sua maioria migrantes do Nordeste, enfrentavam jornadas
+        exaustivas, doenças tropicais (como malária e febre amarela), isolamento, violência de patrões e dívidas que se
+        acumulavam geração após geração.
+      </p>
+      <p>
+        As populações indígenas foram as mais afetadas: expulsas de seus territórios, muitas foram escravizadas ou
+        exterminadas em conflitos e epidemias trazidas pelos colonizadores. Calcula-se que milhares de indígenas
+        desapareceram neste período.
+      </p>
+      <p>
+        O meio ambiente também sofreu: a abertura de trilhas, queimadas, ocupação desordenada e a pressão sobre a
+        floresta e seus rios mudaram para sempre partes da Amazônia.
+      </p>
+      <div class="curiosidade">
+        <strong>Curiosidade:</strong> Durante o ciclo, Manaus foi a primeira cidade brasileira a ter energia elétrica e
+        uma das primeiras do mundo a ter bondes elétricos!
+      </div>
+    </section>
+
+    <section id="declinio">
+      <h2>Declínio e Colapso Econômico</h2>
+      <p>
+        O ciclo entrou em decadência após 1912, quando ingleses, de forma clandestina, levaram sementes de seringueira
+        para o Sudeste Asiático. Lá, criaram plantações industriais (Malásia, Indonésia, Ceilão), muito mais produtivas
+        e baratas, usando técnicas modernas de cultivo.
+      </p>
+      <p>
+        Em poucos anos, a borracha asiática inundou o mercado mundial, derrubou preços e tirou o Brasil da liderança. A
+        economia amazônica colapsou rapidamente: cidades que antes ostentavam riqueza passaram a enfrentar desemprego,
+        abandono de obras e migração em massa. Muitos trabalhadores ficaram presos à floresta, sem recursos para voltar
+        para casa.
+      </p>
+      <p>
+        O fim do ciclo deixou marcas sociais, urbanas e ambientais profundas, além de um sentimento de nostalgia e
+        frustração que ecoa até hoje na cultura local.
+      </p>
+    </section>
+
+    <section id="curiosidades">
+      <h2>Curiosidades e Legados</h2>
+      <ul>
+        <li><strong>O ciclo chegou a responder por 40% de todas as exportações brasileiras</strong> no início do século
+          XX.</li>
+        <li><strong>O famoso “Barão da Borracha”:</strong> Alguns comerciantes enriqueceram tanto que receberam títulos
+          de nobreza do Império Brasileiro.</li>
+        <li><strong>Teatro Amazonas:</strong> Quase todo o material de sua construção veio da Europa, incluindo o teto
+          pintado em Paris.</li>
+        <li><strong>Amazônia como “Eldorado”: </strong> O ciclo atraiu aventureiros, cientistas e artistas do mundo
+          inteiro à região.</li>
+        <li><strong>O ciclo inspirou obras literárias, filmes e músicas</strong> que retratam tanto o fascínio quanto a
+          tragédia desse período.</li>
+        <li><strong>O ciclo da borracha teve um “revival” durante a 2ª Guerra Mundial</strong>, quando o Brasil voltou a
+          exportar o produto em massa para suprir os Aliados.</li>
+      </ul>
+    </section>
+
+    <section id="linha-tempo">
+      <h2>Linha do Tempo</h2>
+      <ul class="timeline">
+        <li><strong>1850:</strong> Início da expansão da extração de látex na Amazônia.</li>
+        <li><strong>1879:</strong> Explosão da demanda internacional por borracha.</li>
+        <li><strong>1896:</strong> Inauguração do Teatro Amazonas, símbolo do luxo amazônico.</li>
+        <li><strong>1910:</strong> Sementes de seringueira chegam à Ásia; produção industrial começa.</li>
+        <li><strong>1912:</strong> Crise da borracha brasileira: preços caem, exportação despenca.</li>
+        <li><strong>1930:</strong> Encerramento do ciclo, colapso econômico na região.</li>
+        <li><strong>1942:</strong> “Soldados da borracha”: durante a Segunda Guerra, milhares de nordestinos voltam a
+          cortar seringa para suprir os Aliados.</li>
+      </ul>
+    </section>
+
+    <section id="grafico">
+      <h2>Gráficos</h2>
+      <p><strong>Gráfico 1:</strong> Evolução da produção de borracha brasileira vs produção asiática (1850-1930).</p>
+      <img src="grafico1.png" class="galeria-img grafico-img" alt="Gráfico 1: Evolução da produção de borracha">
+      <p><strong>Gráfico 2:</strong> Variação do preço internacional da borracha (em dólares) ao longo do ciclo.</p>
+      <img src="grafico2.png" class="galeria-img grafico-img"
+        alt="Gráfico 2: Variação do preço internacional da borracha">
+    </section>
+
+    <section id="podcast" class="podcast-section">
+      <h2>Podcast: O Ciclo da Borracha</h2>
+      <p>Ouça um episódio especial sobre os principais fatos, curiosidades e impactos do Ciclo da Borracha na Amazônia.
+      </p>
+      <audio class="podcast-player" controls>
+        <source src="podcasthistoria.wav" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+      </audio>
+    </section>
+
+    <section id="quiz">
+      <h2>Quiz: Teste seus conhecimentos</h2>
+      <form id="form-quiz">
+        <div class="pergunta">
+          <p>1) Qual cidade ficou conhecida como "Paris dos Trópicos" durante o Ciclo da Borracha?</p>
+          <input type="radio" name="q1" value="Belém"> Belém <br>
+          <input type="radio" name="q1" value="Manaus"> Manaus <br>
+          <input type="radio" name="q1" value="Porto Velho"> Porto Velho <br>
+        </div>
+        <div class="pergunta">
+          <p>2) O que provocou o declínio do Ciclo da Borracha no Brasil?</p>
+          <input type="radio" name="q2" value="Falta de mão de obra"> Falta de mão de obra <br>
+          <input type="radio" name="q2" value="Concorrência da borracha asiática"> Concorrência da borracha asiática
+          <br>
+          <input type="radio" name="q2" value="Fim da demanda por pneus"> Fim da demanda por pneus <br>
+        </div>
+        <div class="pergunta">
+          <p>3) O que era o sistema de aviamento?</p>
+          <input type="radio" name="q3" value="Um imposto cobrado"> Um imposto cobrado sobre a extração do látex <br>
+          <input type="radio" name="q3" value="Um sistema de crédito"> Um sistema de crédito que endividava seringueiros
+          <br>
+          <input type="radio" name="q3" value="Uma técnica de plantio"> Uma técnica de plantio da seringueira <br>
+        </div>
+        <div class="pergunta">
+          <p>4) Quem foi o principal grupo social explorado durante o ciclo?</p>
+          <input type="radio" name="q4" value="Comerciantes europeus"> Comerciantes europeus <br>
+          <input type="radio" name="q4" value="Trabalhadores seringueiros e indígenas"> Trabalhadores seringueiros e
+          indígenas <br>
+          <input type="radio" name="q4" value="Barões da borracha"> Barões da borracha <br>
+        </div>
+        <div class="pergunta">
+          <p>5) O que marcou o fim definitivo do Ciclo da Borracha?</p>
+          <input type="radio" name="q5" value="Descoberta de ouro"> Descoberta de ouro na região <br>
+          <input type="radio" name="q5" value="Proibição do látex"> Proibição da extração de látex <br>
+          <input type="radio" name="q5" value="Queda dos preços da borracha"> Queda dos preços da borracha e perda do
+          mercado para a Ásia <br>
+        </div>
+        <button type="button" onclick="corrigirQuiz()">Corrigir</button>
+      </form>
+      <div id="resultado-quiz"></div>
+    </section>
+
+    <section id="conclusao">
+      <h2>Conclusão</h2>
+      <p>
+        O Ciclo da Borracha é um capítulo de contrastes: riqueza e progresso para poucos, sofrimento e exclusão para
+        muitos. Revela tanto o potencial quanto os perigos do extrativismo predatório. Compreender essa história é
+        fundamental para pensar novos caminhos para a Amazônia e para o Brasil.
+      </p>
+    </section>
+
+    <section id="referencias">
+      <h2>Referências</h2>
+      <ul>
+        <li><a href="https://www.todamateria.com.br/ciclo-da-borracha/" target="_blank">Toda Matéria – Ciclo da
+            Borracha</a></li>
+        <li><a href="https://mundoeducacao.uol.com.br/historiadobrasil/ciclo-da-borracha.htm" target="_blank">Mundo
+            Educação – Ciclo da Borracha</a></li>
+        <li><a href="https://pt.wikipedia.org/wiki/Ciclo_da_borracha" target="_blank">Wikipedia – Ciclo da Borracha</a>
+        </li>
+        <li><a href="https://brasilescola.uol.com.br/historiab/ciclo-borracha.htm" target="_blank">Brasil Escola – Ciclo
+            da Borracha</a></li>
+        <li>Dean, Warren. <em>A luta pela borracha no Brasil</em>. Paz e Terra, 1989.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      Igor Schanoski Pedro da Silva – História do Brasil © 2025</p>
+  </footer>
+  <a href="#" id="btn-topo">↑</a>
+
+  <script>
+    function corrigirQuiz() {
+      const gabarito = [
+        {
+          correta: "Manaus",
+          explicacao: "Manaus foi chamada de 'Paris dos Trópicos' por causa da arquitetura luxuosa e investimentos urbanos durante o auge do Ciclo da Borracha."
+        },
+        {
+          correta: "Concorrência da borracha asiática",
+          explicacao: "A borracha da Ásia era mais barata e abundante, levando o Brasil a perder espaço no mercado internacional."
+        },
+        {
+          correta: "Um sistema de crédito",
+          explicacao: "O sistema de aviamento consistia em um empréstimo de mercadorias aos seringueiros, que ficavam presos a dívidas."
+        },
+        {
+          correta: "Trabalhadores seringueiros e indígenas",
+          explicacao: "Esses grupos eram explorados com trabalho exaustivo, dívidas forçadas e péssimas condições de vida."
+        },
+        {
+          correta: "Queda dos preços da borracha",
+          explicacao: "A segunda queda do ciclo foi marcada pela crise do mercado internacional e pela substituição da borracha brasileira."
+        }
+      ];
+
+      let score = 0;
+      let resultado = "";
+      const perguntas = document.querySelectorAll(".pergunta");
+
+      perguntas.forEach((perguntaDiv, index) => {
+        const respostaSelecionada = perguntaDiv.querySelector("input:checked");
+        const dados = gabarito[index];
+
+        let div = document.createElement("div");
+
+        if (!respostaSelecionada) {
+          div.classList.add("errado");
+          div.innerHTML = `<strong>Questão ${index + 1}:</strong> ❌ Não respondida.<br>
+          Resposta correta: <strong>${dados.correta}</strong><br>
+          <em>${dados.explicacao}</em>`;
+        } else if (respostaSelecionada.value === dados.correta) {
+          score++;
+          div.classList.add("correto");
+          div.innerHTML = `<strong>Questão ${index + 1}:</strong> ✅ Correto!<br>
+          <em>${dados.explicacao}</em>`;
+        } else {
+          div.classList.add("errado");
+          div.innerHTML = `<strong>Questão ${index + 1}:</strong> ❌ Errado.<br>
+          Sua resposta: <u>${respostaSelecionada.value}</u><br>
+          Resposta correta: <strong>${dados.correta}</strong><br>
+          <em>${dados.explicacao}</em>`;
+        }
+
+        resultado += div.outerHTML;
+      });
+
+      document.getElementById("resultado-quiz").innerHTML = `<h3>Você acertou ${score} de 5 questões!</h3>${resultado}`;
+    }
+  </script>
+
+      <div vw class="enabled ">
+        <div vw-access-button class="active "></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper "></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js "></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+</body>
+
+</html>
